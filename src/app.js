@@ -1,24 +1,66 @@
 import yargs from 'yargs';
-import {localization} from './utils';
+import {add,list,remove,read,main} from './utils';
 
+//Add
 yargs.command({
-    command:'localization',
-    describe:'Indicate the weather in a zone',
+    command:'add',
+    describe:'Add a new note',
     builder:{
-        name:{
-            describe:'Name of the localization',
+        title:{
+            describe:'Title of the note',
             demandOption:true,
             type:'string',
         },
-        index: {
-            describe: 'Posible places in that place',
-            demandOption: false,
-            type: 'number',
+        body: {
+            describe: 'body of the note',
+            demandOption: true,
+            type: 'string',
+          },
+          author: {
+            describe: 'body of the note',
+            demandOption: true,
+            type: 'string',
           },
     },
-    handler: localization,
+    handler: add,
+})
+
+//List
+yargs.command({
+    command:'list',
+    describe:'List titles of notes',
+    handler: list,
+})
+
+//Remove
+yargs.command({
+  command:'remove',
+  describe: 'Remove a note',
+  index: {
+    describe: 'Info necessary to choose the note to remove',
+    demandOption: true,
+    type: 'number',
+  },
+  handler: remove,
+
+})
+
+//Read
+yargs.command({
+  command:'read',
+  describe: 'Read a note',
+  index: {
+    describe: 'Info necessary to choose the note to read',
+    demandOption: true,
+    type: 'number',
+  },
+  handler: read,
+
 })
 
 
-yargs.parse();
-       
+
+main();
+
+
+
