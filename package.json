@@ -25,5 +25,8 @@
     "@babel/node": "^7.6.2",
     "@babel/preset-env": "^7.6.2",
     "nodemon": "^1.19.3"
+  },
+  "dependencies": {
+    "yargs": "^14.0.0"
   }
 }
