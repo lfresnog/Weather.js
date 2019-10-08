@@ -1,0 +1,10 @@
+language: node_js
+
+services:
+  - babelrc
+
+
+script:
+  - npm install
+  - npm start -- localization --name="Albacete" --index=0
+  - npm start -- localization --name="Sevilla"
