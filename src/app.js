@@ -19,6 +19,4 @@ yargs.command({
     handler: localization,
 })
 
-
-yargs.parse();
-       
+yargs.parse();      

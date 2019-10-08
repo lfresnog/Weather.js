@@ -20,23 +20,19 @@ const localization = function localization(argv){
        }
        else{
         request({ url: mapBoxurl, json: true }, (error, response) => {
-            console.log("");
-            
-                console.log(`${response.body.features[argv.index].place_name}`);
-                console.log(chalk.yellow(`  x: ${response.body.features[argv.index].geometry.coordinates[0]}  y: ${response.body.features[argv.index].geometry.coordinates[1]}`));
-
-              const cordX = response.body.features[argv.index].geometry.coordinates[0];
-              const cordY = response.body.features[argv.index].geometry.coordinates[1];
-              const darkSkyURl = 'https://api.darksky.net/forecast/';
-              const darkSkytoken = '7e42fcf88c4ed04bbdd548e6c7469798';
-              const darkSkyurl = `${darkSkyURl}${darkSkytoken}/${cordX},${cordY}`;
-              request({ url: darkSkyurl, json: true }, (error, response) => {
-              console.log(`La temperatura en esa ciudad es ${response.body.currently.temperature}`);
+          console.log("");
+          console.log(`${response.body.features[argv.index].place_name}`);
+          console.log(chalk.yellow(`  x: ${response.body.features[argv.index].geometry.coordinates[0]}  y: ${response.body.features[argv.index].geometry.coordinates[1]}`));
+          const cordX = response.body.features[argv.index].geometry.coordinates[0];
+          const cordY = response.body.features[argv.index].geometry.coordinates[1];
+          const darkSkyURl = 'https://api.darksky.net/forecast/';
+          const darkSkytoken = '7e42fcf88c4ed04bbdd548e6c7469798';
+          const darkSkyurl = `${darkSkyURl}${darkSkytoken}/${cordX},${cordY}`;
+          request({ url: darkSkyurl, json: true }, (error, response) => {
+            console.log(`La temperatura en esa ciudad es ${response.body.currently.temperature}`);
               });
-
-          });
-
-       }
+        });
+      }
     }
     catch(error){
         console.error(chalk.red("\n ERROR \n"));
