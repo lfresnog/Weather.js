@@ -1,5 +1,5 @@
-# Weather.js
-Programme that tells you the temperature in an area that you choose, through the API's MapBox and DarkSky.:umbrella:
+# Weather.js:umbrella:
+Programme that tells you the temperature in an area that you choose, through the API's MapBox and DarkSky.
 
 ## Install
  `npm install`
