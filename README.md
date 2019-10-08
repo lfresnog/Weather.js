@@ -15,4 +15,4 @@ Programme that tells you the temperature in an area that you choose, through the
 
  **Check temperature in a certain place**
  
- `npm start -- localization --name="Albacete" --index=0"` 
+ `npm start -- localization --name="Albacete" --index=0` 
